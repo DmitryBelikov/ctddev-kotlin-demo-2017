@@ -1,30 +1,6 @@
-import java.util.ArrayList
-import java.util.LinkedList
-import java.util.Scanner
 
-val C = 505
-val INF = 1000 * 1000 * 1000
+package my.lib
 
-class Edge(val a: Int, val b: Int, val cap: Int) {
-    var flow = 0
-}
-
-var n = 0
-var m = 0
-var s = 0
-var t = 0
-var edges = ArrayList<Edge>()
-var g = Array(C, { ArrayList<Int>() })
-var pt = IntArray(C, { 0 })
-var d = IntArray(C, { 0 })
-
-fun addEdge(edge: Edge) {
-    g[edge.a].add(edges.size)
-    edges.add(edge)
-
-    g[edge.b].add(edges.size)
-    edges.add(Edge(edge.b, edge.a, edge.cap))
-}
 
 fun bfs(flow: Int): Boolean {
     d = IntArray(C, { INF })
